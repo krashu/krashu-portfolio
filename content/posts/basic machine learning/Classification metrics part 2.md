@@ -25,7 +25,7 @@ The Area Under the Receiver Operating Characteristic Curve (AU-ROC) is a common 
 For instance:
 ![AUC ROC](/AUC-ROC-curve.png)
 
-- If Model B has a greater AUC than Model A, then Model B is superior.
+- If Model B has a greater AUC than Model A, then Model B is superior. 
 - However, AU-ROC is not effective for highly imbalanced data.
 
 ## AU-ROC vs. Other Metrics
