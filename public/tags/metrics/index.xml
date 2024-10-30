@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Metrics on Ashutosh Upadhyay</title>
+    <link>http://localhost:1313/tags/metrics/</link>
+    <description>Recent content in Metrics on Ashutosh Upadhyay</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 30 Oct 2024 17:55:28 +0800</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/metrics/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Classification Metrics part 1</title>
+      <link>http://localhost:1313/posts/basic-machine-learning/classification-metrics-part-1/</link>
+      <pubDate>Wed, 30 Oct 2024 17:55:28 +0800</pubDate>
+      <guid>http://localhost:1313/posts/basic-machine-learning/classification-metrics-part-1/</guid>
+      <description>&lt;p&gt;When it comes to evaluating machine learning models, accuracy is often the first metric that comes to mind. However, relying on accuracy alone can be confusing, especially when dealing with different products. In this article, we’ll explore why accuracy may not be the best metric and discuss other metrics that provide a more accurate measure of model performance.&lt;/p&gt;&#xA;&lt;h2 id=&#34;the-problem-with-accuracy&#34;&gt;The Problem with Accuracy&lt;/h2&gt;&#xA;&lt;p&gt;Accuracy is simply the proportion of correct predictions out of the total number of predictions. While this seems straightforward, it can fail to give an accurate picture when the data is imbalanced.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Classification metrics part 2</title>
+      <link>http://localhost:1313/posts/basic-machine-learning/classification-metrics-part-2/</link>
+      <pubDate>Sat, 19 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/basic-machine-learning/classification-metrics-part-2/</guid>
+      <description>&lt;p&gt;In this article we will be covering some more advance metrics for classification task.&lt;/p&gt;&#xA;&lt;h2 id=&#34;sensitivity-and-specificity&#34;&gt;Sensitivity and Specificity&lt;/h2&gt;&#xA;&lt;p&gt;When evaluating medical tests, several metrics are crucial for determining their effectiveness in correctly identifying the presence or absence of a disease. Here’s a quick rundown:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;Sensitivity&lt;/strong&gt;: This measures the proportion of people with the disease who test positive. High sensitivity is ideal for screening tests because it minimizes the chance of missing a person with the disease (low false negatives).&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

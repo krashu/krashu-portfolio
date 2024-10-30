@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        :root {
+            --accent-color: #FF4D4D;
+        }
+    </style>
+
+    
+    
+    
+    
+    
+    
+
+    
+    <title>Markdown Syntax Guide</title>
+    <meta name="description" content="Sample article showcasing basic Markdown syntax and formatting for HTML elements.">
+    <meta name="keywords" content='blog, ashutosh, ashutosh upadhyay, Data scientist, markdown, css, html'>
+
+    <meta property="og:url" content="http://localhost:1313/posts/markdown-syntax/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Markdown Syntax Guide">
+    <meta property="og:description" content="Sample article showcasing basic Markdown syntax and formatting for HTML elements.">
+    <meta property="og:image" content="http://localhost:1313/images/Profile.jpg">
+    <meta property="og:image:secure_url" content="http://localhost:1313/images/Profile.jpg">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Markdown Syntax Guide">
+    <meta name="twitter:description" content="Sample article showcasing basic Markdown syntax and formatting for HTML elements.">
+    <meta property="twitter:domain" content="http://localhost:1313/posts/markdown-syntax/">
+    <meta property="twitter:url" content="http://localhost:1313/posts/markdown-syntax/">
+    <meta name="twitter:image" content="http://localhost:1313/images/Profile.jpg">
+
+    
+    <link rel="canonical" href="http://localhost:1313/posts/markdown-syntax/">
+
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.min.css" media="print">
+
+    
+    <link rel="stylesheet" type="text/css" href="/css/main.min.css">
+
+    
+    <link id="dark-theme" rel="stylesheet" href="/css/dark.min.css">
+
+    
+    <script src="/js/bundle.min.dce06bccdb48a1e609abd5ddf48171ca09316a6284027f6cc83ac12473b2ea0e.js" integrity="sha256-3OBrzNtIoeYJq9Xd9IFxygkxamKEAn9syDrBJHOy6g4="></script>
+
+    
+    
+        <!-- KaTeX -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css" integrity="sha384-Xi8rHCmBmhbuyyhbI88391ZKP2dmfnOl4rT9ZfRI7mLTdk1wblIUnrIq35nqwEvC" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js" integrity="sha384-X/XCfMm41VSsqRNQgDerQczD69XqmjOOOwYQvr/uuC+j4OPoNhVgjdGFwhvN02Ja" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js" integrity="sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR" crossorigin="anonymous"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+          // customised options
+          // • auto-render specific keys, e.g.:
+          delimiters: [
+            {left: '$$', right: '$$', display: true},
+            {left: '$', right: '$', display: false},
+          ],
+          // • rendering keys, e.g.:
+          throwOnError : false
+        });
+      });
+    </script>
+  
+    
+</head>
+<body>
+        <script>
+            
+            setThemeByUserPref();
+        </script><header class="header">
+    <nav class="header-nav">
+
+        
+        <div class="avatar">
+            <a href="http://localhost:1313/">
+                <img src='/images/Profile.jpg' alt="avatar">
+            </a>
+        </div>
+        
+
+        <div class="nav-title">
+            <a class="nav-brand" href="http://localhost:1313/">Ashutosh Upadhyay</a>
+        </div>
+
+        <div class="nav-links">
+            
+            <div class="nav-link">
+                <a href="http://localhost:1313/" aria-label="" ><span data-feather='home'></span> Home </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="http://localhost:1313/posts/" aria-label="" > Posts </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="http://localhost:1313/tags/" aria-label="" > Tags </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="https://github.com" aria-label="github" ><span data-feather='github'></span>  </a>
+            </div>
+            
+
+            <span class="nav-icons-divider"></span>
+            <div class="nav-link dark-theme-toggle">
+                <span class="sr-only dark-theme-toggle-screen-reader-target">theme</span>
+                <a aria-hidden="true" role="switch">
+                    <span class="theme-toggle-icon" data-feather="moon"></span>
+                </a>
+            </div>
+
+            <div class="nav-link" id="hamburger-menu-toggle">
+                <span class="sr-only hamburger-menu-toggle-screen-reader-target">menu</span>
+                <a aria-checked="false" aria-labelledby="hamburger-menu-toggle" id="hamburger-menu-toggle-target" role="switch">
+                    <span data-feather="menu"></span>
+                </a>
+            </div>
+
+            
+            <ul class="nav-hamburger-list visibility-hidden">
+                
+                <li class="nav-item">
+                    <a href="http://localhost:1313/" ><span data-feather='home'></span> Home </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="http://localhost:1313/posts/" > Posts </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="http://localhost:1313/tags/" > Tags </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="https://github.com" ><span data-feather='github'></span>  </a>
+                </li>
+                
+                <li class="nav-item dark-theme-toggle">
+                    <span class="sr-only dark-theme-toggle-screen-reader-target">theme</span>
+                    <a role="switch">
+                        <span class="theme-toggle-icon" data-feather="moon"></span>
+                    </a>
+                </li>
+            </ul>
+
+        </div>
+    </nav>
+</header>
+<main id="content">
+    <div class="post container">
+    <div class="post-header-section">
+        <h1>Markdown Syntax Guide</h1>
+
+        
+
+        
+	
+	
+	
+	
+        
+
+	
+
+	
+
+	
+          <small role="doc-subtitle">Sample article showcasing basic Markdown syntax and formatting for HTML elements.</small>
+	
+
+	
+          <p class="post-date">June 19, 2019
+           
+          </p>
+	
+
+        <ul class="post-tags">
+          
+           
+             <li class="post-tag"><a href="http://localhost:1313/tags/markdown">markdown</a></li>
+           
+         
+           
+             <li class="post-tag"><a href="http://localhost:1313/tags/css">css</a></li>
+           
+         
+           
+             <li class="post-tag"><a href="http://localhost:1313/tags/html">html</a></li>
+           
+         
+        </ul>
+    </div>
+
+    <div class="post-content">
+        <p>This article offers a sample of basic Markdown syntax that can be used in Hugo content files, also it shows whether basic HTML elements are decorated with CSS in a Hugo theme.</p>
+<h2 id="sensitivity-and-specificity">Sensitivity and Specificity</h2>
+<p>When evaluating medical tests, several metrics are crucial for determining their effectiveness in correctly identifying the presence or absence of a disease. Here’s a quick rundown:</p>
+<ul>
+<li>
+<p><strong>Sensitivity</strong>: This measures the proportion of people with the disease who test positive. High sensitivity is ideal for screening tests because it minimizes the chance of missing a person with the disease (low false negatives).</p>
+</li>
+<li>
+<p><strong>Specificity</strong>: This indicates the proportion of people without the disease who test negative. High specificity is preferred for confirmatory tests, as it reduces the likelihood of false positives.</p>
+</li>
+</ul>
+<h2 id="understanding-au-roc">Understanding AU-ROC</h2>
+<p>The Area Under the Receiver Operating Characteristic Curve (AU-ROC) is a common metric used to evaluate model performance by plotting the True Positive Rate (TPR) against the False Positive Rate (FPR) at various thresholds. The model with the highest area under the curve is generally considered the best.</p>
+<p>For instance:</p>
+<!-- raw HTML omitted -->
+<ul>
+<li>If Model B has a greater AUC than Model A, then Model B is superior.</li>
+<li>However, AU-ROC is not effective for highly imbalanced data.</li>
+</ul>
+<h2 id="au-roc-vs-other-metrics">AU-ROC vs. Other Metrics</h2>
+<p>AU-ROC is distinct from metrics like Precision, Recall, or F1-score because it considers all possible thresholds, not just a fixed threshold like 0.5. It also does not depend on the actual values of predictions but rather on their relative ordering.</p>
+<p>For example:</p>
+<ul>
+<li>If two models produce different predicted values but maintain the same order, their AUC will be identical.</li>
+</ul>
+<h2 id="auc-in-imbalanced-data">AUC in Imbalanced Data</h2>
+<p>AU-ROC can be misleading with imbalanced datasets. In such cases, the Area Under the Precision-Recall Curve (AU-PRC) is a better alternative.</p>
+<ul>
+<li><strong>PRC Plot</strong>: Precision is on the y-axis, and Recall is on the x-axis. The area under this curve gives us the AU-PRC, which is a reliable metric for imbalanced datasets.</li>
+</ul>
+<h2 id="g-mean-a-solution-for-imbalanced-data">G-Mean: A Solution for Imbalanced Data</h2>
+<p>When dealing with imbalanced data, the Geometric Mean (G-Mean) is useful as it considers both sensitivity and specificity, providing a balanced performance measure across all classes.</p>
+<ul>
+<li><strong>G-Mean Formula</strong>: $$\text{G-Mean} = \sqrt{\text{Specificity} \times \text{Sensitivity}}$$</li>
+</ul>
+<h3 id="metric-selection-cheat-sheet">Metric Selection Cheat Sheet</h3>
+<ul>
+<li><strong>Probabilities of Classes</strong>: Use Log loss.</li>
+<li><strong>Balanced Classes</strong>: Use Accuracy.</li>
+<li><strong>Imbalanced Classes</strong>:
+<ul>
+<li><strong>Critical FP</strong>: Use Precision.</li>
+<li><strong>Critical FN</strong>: Use Recall.</li>
+<li><strong>Balance Between Precision and Recall</strong>: Use F1 Score.</li>
+<li><strong>Overall Concern (TN and TP)</strong>: Use AU-ROC.</li>
+<li><strong>Severe Imbalance</strong>: Use PR AUC.</li>
+</ul>
+</li>
+</ul>
+<h2 id="loss-functions-vs-performance-metrics">Loss Functions vs. Performance Metrics</h2>
+<p>Performance metrics differ from loss functions in that loss functions are typically differentiable with respect to the model’s parameters, making them suitable for optimization. In contrast, not all performance metrics need to be differentiable. Some differentiable metrics, like Mean Squared Error (MSE), can serve as both loss functions and performance metrics.</p>
+
+        
+    </div>
+
+    <div class="prev-next">
+        
+    </div>
+
+    
+    
+    
+</div>
+
+<aside class="post-toc">
+    <nav id="toc">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#sensitivity-and-specificity">Sensitivity and Specificity</a></li>
+    <li><a href="#understanding-au-roc">Understanding AU-ROC</a></li>
+    <li><a href="#au-roc-vs-other-metrics">AU-ROC vs. Other Metrics</a></li>
+    <li><a href="#auc-in-imbalanced-data">AUC in Imbalanced Data</a></li>
+    <li><a href="#g-mean-a-solution-for-imbalanced-data">G-Mean: A Solution for Imbalanced Data</a>
+      <ul>
+        <li><a href="#metric-selection-cheat-sheet">Metric Selection Cheat Sheet</a></li>
+      </ul>
+    </li>
+    <li><a href="#loss-functions-vs-performance-metrics">Loss Functions vs. Performance Metrics</a></li>
+  </ul>
+</nav>
+    </nav>
+</aside>
+
+
+
+    
+
+        </main><footer class="footer">
+    
+    
+
+    
+
+    
+
+    
+
+    <span>
+        Made with &#10084;&#65039; using <a target="_blank" href="https://github.com/526avijitgupta/gokarna">Gokarna</a>
+    </span>
+</footer>
+</body>
+</html>

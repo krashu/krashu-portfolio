@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        :root {
+            --accent-color: #FF4D4D;
+        }
+    </style>
+
+    
+    
+    
+    
+    
+    
+
+    
+    <title>Classification Metrics part 1</title>
+    <meta name="description" content="Guide to use classification metrics part 1.">
+    <meta name="keywords" content='blog, ashutosh, ashutosh upadhyay, Data scientist, Machine learning, metrics'>
+
+    <meta property="og:url" content="http://localhost:1313/posts/basic-machine-learning/classification-metrics-part-1/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Classification Metrics part 1">
+    <meta property="og:description" content="Guide to use classification metrics part 1.">
+    <meta property="og:image" content="http://localhost:1313/images/Profile.jpg">
+    <meta property="og:image:secure_url" content="http://localhost:1313/images/Profile.jpg">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Classification Metrics part 1">
+    <meta name="twitter:description" content="Guide to use classification metrics part 1.">
+    <meta property="twitter:domain" content="http://localhost:1313/posts/basic-machine-learning/classification-metrics-part-1/">
+    <meta property="twitter:url" content="http://localhost:1313/posts/basic-machine-learning/classification-metrics-part-1/">
+    <meta name="twitter:image" content="http://localhost:1313/images/Profile.jpg">
+
+    
+    <link rel="canonical" href="http://localhost:1313/posts/basic-machine-learning/classification-metrics-part-1/">
+
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.min.css" media="print">
+
+    
+    <link rel="stylesheet" type="text/css" href="/css/main.min.css">
+
+    
+    <link id="dark-theme" rel="stylesheet" href="/css/dark.min.css">
+
+    
+    <script src="/js/bundle.min.dce06bccdb48a1e609abd5ddf48171ca09316a6284027f6cc83ac12473b2ea0e.js" integrity="sha256-3OBrzNtIoeYJq9Xd9IFxygkxamKEAn9syDrBJHOy6g4="></script>
+
+    
+    
+        <!-- KaTeX -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css" integrity="sha384-Xi8rHCmBmhbuyyhbI88391ZKP2dmfnOl4rT9ZfRI7mLTdk1wblIUnrIq35nqwEvC" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js" integrity="sha384-X/XCfMm41VSsqRNQgDerQczD69XqmjOOOwYQvr/uuC+j4OPoNhVgjdGFwhvN02Ja" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js" integrity="sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR" crossorigin="anonymous"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+          // customised options
+          // • auto-render specific keys, e.g.:
+          delimiters: [
+            {left: '$$', right: '$$', display: true},
+            {left: '$', right: '$', display: false},
+          ],
+          // • rendering keys, e.g.:
+          throwOnError : false
+        });
+      });
+    </script>
+  
+    
+</head>
+<body>
+        <script>
+            
+            setThemeByUserPref();
+        </script><header class="header">
+    <nav class="header-nav">
+
+        
+        <div class="avatar">
+            <a href="http://localhost:1313/">
+                <img src='/images/Profile.jpg' alt="avatar">
+            </a>
+        </div>
+        
+
+        <div class="nav-title">
+            <a class="nav-brand" href="http://localhost:1313/">Ashutosh Upadhyay</a>
+        </div>
+
+        <div class="nav-links">
+            
+            <div class="nav-link">
+                <a href="http://localhost:1313/" aria-label="" ><span data-feather='home'></span> Home </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="http://localhost:1313/posts/" aria-label="" > Posts </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="http://localhost:1313/tags/" aria-label="" > Tags </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="https://github.com" aria-label="github" ><span data-feather='github'></span>  </a>
+            </div>
+            
+
+            <span class="nav-icons-divider"></span>
+            <div class="nav-link dark-theme-toggle">
+                <span class="sr-only dark-theme-toggle-screen-reader-target">theme</span>
+                <a aria-hidden="true" role="switch">
+                    <span class="theme-toggle-icon" data-feather="moon"></span>
+                </a>
+            </div>
+
+            <div class="nav-link" id="hamburger-menu-toggle">
+                <span class="sr-only hamburger-menu-toggle-screen-reader-target">menu</span>
+                <a aria-checked="false" aria-labelledby="hamburger-menu-toggle" id="hamburger-menu-toggle-target" role="switch">
+                    <span data-feather="menu"></span>
+                </a>
+            </div>
+
+            
+            <ul class="nav-hamburger-list visibility-hidden">
+                
+                <li class="nav-item">
+                    <a href="http://localhost:1313/" ><span data-feather='home'></span> Home </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="http://localhost:1313/posts/" > Posts </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="http://localhost:1313/tags/" > Tags </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="https://github.com" ><span data-feather='github'></span>  </a>
+                </li>
+                
+                <li class="nav-item dark-theme-toggle">
+                    <span class="sr-only dark-theme-toggle-screen-reader-target">theme</span>
+                    <a role="switch">
+                        <span class="theme-toggle-icon" data-feather="moon"></span>
+                    </a>
+                </li>
+            </ul>
+
+        </div>
+    </nav>
+</header>
+<main id="content">
+    <div class="post container">
+    <div class="post-header-section">
+        <h1>Classification Metrics part 1</h1>
+
+        
+
+        
+	
+	
+	
+	
+        
+
+	
+
+	
+
+	
+          <small role="doc-subtitle">Guide to use classification metrics part 1.</small>
+	
+
+	
+          <p class="post-date">October 30, 2024
+           
+          </p>
+	
+
+        <ul class="post-tags">
+          
+           
+             <li class="post-tag"><a href="http://localhost:1313/tags/machine-learning">Machine learning</a></li>
+           
+         
+           
+             <li class="post-tag"><a href="http://localhost:1313/tags/metrics">metrics</a></li>
+           
+         
+        </ul>
+    </div>
+
+    <div class="post-content">
+        <p>When it comes to evaluating machine learning models, accuracy is often the first metric that comes to mind. However, relying on accuracy alone can be confusing, especially when dealing with different products. In this article, we’ll explore why accuracy may not be the best metric and discuss other metrics that provide a more accurate measure of model performance.</p>
+<h2 id="the-problem-with-accuracy">The Problem with Accuracy</h2>
+<p>Accuracy is simply the proportion of correct predictions out of the total number of predictions. While this seems straightforward, it can fail to give an accurate picture when the data is imbalanced.</p>
+<p><strong>Consider this scenario:</strong></p>
+<ul>
+<li>Suppose you have 100 data points, with 90 belonging to class 1 and 10 to class 0.</li>
+<li>If a model predicts every data point as class 1, it will achieve an accuracy of 90%.</li>
+</ul>
+<p>At first glance, this might seem impressive. However, this high accuracy is misleading because the model completely fails to identify any of the instances of class 0. This is a common pitfall in imbalanced datasets, where one class significantly outnumbers the other.</p>
+<h2 id="a-better-alternative-the-confusion-matrix">A Better Alternative: The Confusion Matrix</h2>
+<p>To better evaluate model performance, especially in cases of imbalanced data, the confusion matrix is a powerful tool. It provides a detailed breakdown of a model’s predictions, helping us understand the types of errors it is making.</p>
+<p>A confusion matrix categorizes predictions into four scenarios:</p>
+<ul>
+<li><strong>True Positive (TP):</strong> The model predicts True, and the actual value is True.</li>
+<li><strong>False Positive (FP):</strong> The model predicts True, but the actual value is False. This is also known as Type 1 Error.</li>
+<li><strong>True Negative (TN):</strong> The model predicts False, and the actual value is False.</li>
+<li><strong>False Negative (FN):</strong> The model predicts False, but the actual value is True. This is also known as Type 2 Error.</li>
+</ul>
+<h3 id="evaluating-model-performance-using-the-confusion-matrix">Evaluating Model Performance Using the Confusion Matrix</h3>
+<p>High accuracy alone doesn’t necessarily indicate a good model. A model is considered good if:</p>
+<ul>
+<li>Both TP (True Positives) and TN (True Negatives) are high.</li>
+<li>Both FP (False Positives) and FN (False Negatives) are low.</li>
+</ul>
+<p>Given the confusion matrix, we can calculate the total actual positives as:</p>
+<ul>
+<li><strong>Total Actual Positives (P) = TP + FN</strong></li>
+</ul>
+<p>Similarly, the total actual negatives can be calculated as:</p>
+<ul>
+<li><strong>Total Actual Negatives (N) = FP + TN</strong></li>
+</ul>
+<h3 id="calculating-accuracy-from-the-confusion-matrix">Calculating Accuracy from the Confusion Matrix</h3>
+<p>Accuracy can be derived directly from the confusion matrix using the formula:</p>
+<p>$$
+\text{Accuracy} = \frac{\text{Correct Predictions}}{\text{Total Number of Predictions}} = \frac{TP + TN}{TP + TN + FN + FP}
+$$</p>
+<h2 id="precision-when-false-positives-are-critical">Precision: When False Positives Are Critical</h2>
+<p>When we cannot afford any false positives, <strong>precision</strong> is the metric to focus on. Precision tells us, out of all points predicted to be positive, how many are actually positive.</p>
+<p>$$
+\text{Precision} = \frac{TP}{TP + FP}
+$$</p>
+<p><strong>Example:</strong></p>
+<ul>
+<li>Misclassifying a spam email as not spam (FN) is somewhat acceptable.</li>
+<li>However, classifying an important email as spam (FP) can lead to major consequences.</li>
+</ul>
+<p>In scenarios where reducing false positives (FP) is crucial, precision becomes the primary metric.</p>
+<p><strong>Range of Precision Values:</strong> 0 to 1.</p>
+<h2 id="recall-when-false-negatives-are-critical">Recall: When False Negatives Are Critical</h2>
+<p>When we cannot afford any false negatives, <strong>recall</strong> (also known as sensitivity or hit rate) becomes the key metric. Recall tells us, out of all the actually positive points, how many were predicted to be positive.</p>
+<p>$$
+\text{Recall} = \frac{TP}{TP + FN}
+$$</p>
+<p><strong>Example:</strong></p>
+<ul>
+<li>Classifying a healthy person as having cancer (FP) and conducting further tests is acceptable.</li>
+<li>However, missing out on diagnosing a person with cancer (FN) can be a life-or-death situation.</li>
+</ul>
+<p>In such cases, minimizing false negatives (FN) is essential, and recall is the metric to focus on.</p>
+<p><strong>Range of Recall Values:</strong> 0 to 1.</p>
+<h2 id="additional-metrics-to-consider">Additional Metrics to Consider</h2>
+<ul>
+<li><strong>True Negative Rate (TNR):</strong> Also known as specificity or selectivity, TNR tells us out of all the actual negative points, how many were correctly predicted as negative.</li>
+</ul>
+<p>$$
+\text{TNR} = \frac{TN}{FP + TN}
+$$</p>
+<ul>
+<li><strong>False Positive Rate (FPR):</strong> FPR indicates how many of the actual negative points were incorrectly classified as positive.</li>
+</ul>
+<p>$$
+\text{FPR} = \frac{FP}{FP + TN}
+$$</p>
+<ul>
+<li><strong>False Negative Rate (FNR):</strong> FNR indicates how many of the actual positive points were incorrectly classified as negative.</li>
+</ul>
+<p>$$
+\text{FNR} = \frac{FN}{FN + TP}
+$$</p>
+<h2 id="the-f1-score-balancing-precision-and-recall">The F1 Score: Balancing Precision and Recall</h2>
+<p>When both precision and recall are equally important, the <strong>F1 score</strong> is the metric of choice. The F1 score is the harmonic mean of precision and recall, making it a balanced measure of a model’s performance.</p>
+<p>$$
+\text{F1 Score} = \frac{2 \times \text{Precision} \times \text{Recall}}{\text{Precision} + \text{Recall}}
+$$</p>
+<p><strong>Example:</strong>
+In a fintech company, both false positives (giving loans to people unable to repay) and false negatives (missing out on good borrowers) can have significant consequences. In such cases, balancing precision and recall is crucial, and the F1 score becomes an essential metric.</p>
+<p><strong>Note:</strong></p>
+<ul>
+<li>The F1 score is particularly useful when dealing with imbalanced data.</li>
+<li><strong>Range:</strong> 0 to 1.</li>
+</ul>
+<h3 id="why-use-the-harmonic-mean-in-the-f1-score">Why Use the Harmonic Mean in the F1 Score?</h3>
+<p>The harmonic mean penalizes lower values of precision or recall more than the arithmetic mean, ensuring that both metrics must be reasonably high for a good F1 score.</p>
+<h3 id="adjusting-the-f1-score-with-beta">Adjusting the F1 Score with Beta</h3>
+<p>If you need to give more importance to either precision or recall, you can adjust the F1 score using a beta parameter.</p>
+<p>$$
+F_{\beta} = (1 + \beta^2) \times \frac{\text{Precision} \times \text{Recall}}{\beta^2 \times \text{Precision} + \text{Recall}}
+$$</p>
+<ul>
+<li><strong>Beta = 2</strong> when recall is more important than precision.</li>
+<li><strong>Beta = 0.5</strong> when precision is more important than recall.</li>
+</ul>
+
+        
+    </div>
+
+    <div class="prev-next">
+        
+    </div>
+
+    
+    
+    
+</div>
+
+<aside class="post-toc">
+    <nav id="toc">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#the-problem-with-accuracy">The Problem with Accuracy</a></li>
+    <li><a href="#a-better-alternative-the-confusion-matrix">A Better Alternative: The Confusion Matrix</a>
+      <ul>
+        <li><a href="#evaluating-model-performance-using-the-confusion-matrix">Evaluating Model Performance Using the Confusion Matrix</a></li>
+        <li><a href="#calculating-accuracy-from-the-confusion-matrix">Calculating Accuracy from the Confusion Matrix</a></li>
+      </ul>
+    </li>
+    <li><a href="#precision-when-false-positives-are-critical">Precision: When False Positives Are Critical</a></li>
+    <li><a href="#recall-when-false-negatives-are-critical">Recall: When False Negatives Are Critical</a></li>
+    <li><a href="#additional-metrics-to-consider">Additional Metrics to Consider</a></li>
+    <li><a href="#the-f1-score-balancing-precision-and-recall">The F1 Score: Balancing Precision and Recall</a>
+      <ul>
+        <li><a href="#why-use-the-harmonic-mean-in-the-f1-score">Why Use the Harmonic Mean in the F1 Score?</a></li>
+        <li><a href="#adjusting-the-f1-score-with-beta">Adjusting the F1 Score with Beta</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </nav>
+</aside>
+
+
+
+    
+
+        </main><footer class="footer">
+    
+    
+
+    
+
+    
+
+    
+
+    <span>
+        Made with &#10084;&#65039; using <a target="_blank" href="https://github.com/526avijitgupta/gokarna">Gokarna</a>
+    </span>
+</footer>
+</body>
+</html>

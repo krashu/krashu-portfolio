@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Html on Ashutosh Upadhyay</title>
+    <link>http://localhost:1313/tags/html/</link>
+    <description>Recent content in Html on Ashutosh Upadhyay</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 19 Jun 2019 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/html/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Markdown Syntax Guide</title>
+      <link>http://localhost:1313/posts/markdown-syntax/</link>
+      <pubDate>Wed, 19 Jun 2019 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/markdown-syntax/</guid>
+      <description>&lt;p&gt;This article offers a sample of basic Markdown syntax that can be used in Hugo content files, also it shows whether basic HTML elements are decorated with CSS in a Hugo theme.&lt;/p&gt;&#xA;&lt;h2 id=&#34;sensitivity-and-specificity&#34;&gt;Sensitivity and Specificity&lt;/h2&gt;&#xA;&lt;p&gt;When evaluating medical tests, several metrics are crucial for determining their effectiveness in correctly identifying the presence or absence of a disease. Here’s a quick rundown:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;Sensitivity&lt;/strong&gt;: This measures the proportion of people with the disease who test positive. High sensitivity is ideal for screening tests because it minimizes the chance of missing a person with the disease (low false negatives).&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
