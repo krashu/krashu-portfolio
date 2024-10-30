@@ -9,7 +9,7 @@ title = "Ashutosh Upadhyay"
 [params]
   avatarAltText = "avatar"
   avatarSize = "size-m"
-  avatarURL = "krashu-portfolio/images/Profile.jpg"
+  avatarURL = "https://krashu.github.io/krashu-portfolio/images/Profile.jpg"
 
   customHeadHTML = """
     <!-- KaTeX -->
